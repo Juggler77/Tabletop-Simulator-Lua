@@ -1,0 +1,3135 @@
+<!-- There's no way to detect right click for XML ui elements.
+You get the values player, Option, id in that order.
+player:  is actually a reference top the player. not a color string like the traditional buttons.
+Option:  is the value of the input or dropdown that was provided. Will be blank for buttons.
+id:  is the xml element ID. XML doesn't seem to mind if you have multiple elements with the same ID.-->
+<Defaults>
+   <Panel class = "WindowBorder"
+          color = "#8F8478"
+          outline = "Grey"
+          allowDragging = "true"
+          returnToOriginalPositionWhenReleased = "false"
+          outlineSize = "2 -2" />
+  <Button class = "DisplayPanelText+"
+          onClick = "expandPanel"
+          color = "#cccc00"
+          image = ""
+          outline = "black"
+          textcolor = "Green"
+          fontStyle = "Bold"
+          text = "+"/>
+  <Button interactable = "false"
+          class = "DisplayPanelTextName"
+          color = "#ffff00"
+          image = ""
+          textcolor = "black"
+          fontStyle = "Bold"
+          text = "PANELS"/>
+  <Button class = "DisplayPanelText-"
+          onClick = "collapsePanel"
+          color = "#cccc00"
+          image = ""
+          textcolor = "Red"
+          fontStyle = "Bold"
+          text = "-"/>
+
+   <Panel class="TopBar"
+          height="30"
+          width="385"
+          rectAlignment="UpperCenter"
+          color="#19197040"
+          outline="#00008B"/>
+   <Button class="topButtons"
+           width="20"
+           height="20"
+           rectAlignment="UpperRight"
+           color="#eeeeee"/>
+   <Row class = "MenuBar"
+        height = "25"
+        rectAlignment = "UpperRight"
+        color = "Grey" />
+
+   <Text class = "WindowTitle"
+         fontSize = "20"
+         fontStyle = "Bold"
+         color = "White"/>
+
+   <TableLayout class = "PokerTable"
+                autoCalculateHeight = "true"
+                rectAlignment = "UpperRight"
+                offsetXY = "0 -25"
+                cellPadding = "2"
+                color = "Grey"/>
+
+   <Button image = "Sprites/Layout/Button"
+           resizeTextForBestFit = "true"
+           tooltipfontSize = "24"
+           tooltipBackgroundColor = "White"
+           tooltipTextColor = "Red"
+           tooltipPosition = "Above"
+           tooltipOffset = "25"
+           colors = "White|White|White|White"
+           textShadow = ""
+           textColor = "White"/>
+
+   <ToggleButton image = "Sprites/Layout/Button"
+                 resizeTextForBestFit = "true"
+                 tooltipfontSize = "24"
+                 tooltipBackgroundColor = "White"
+                 tooltipTextColor = "Red"
+                 tooltipPosition = "Above"
+                 tooltipOffset = "25"
+                 colors = "White|White|White|White"
+                 textShadow = ""
+                 textColor = "White"/>
+
+   <ToggleButton class = "DisplayPanelText"
+                 resizeTextForBestFit = "true"
+                 fontStyle = "Bold"
+                 outlineSize = "1 -1"
+                 outline = "grey"
+                 textShadow = "clear"
+                 color = "#ffffff"/>
+
+   <Button class = "GamesPanelText"
+           resizeTextForBestFit = "true"
+           horizontalOverflow = "Wrap"
+           textColor="White"
+           fontStyle = "Bold"/>
+
+   <Button class = "DeclarePanelText"
+           resizeTextForBestFit = "true"
+           fontStyle = "Bold"
+           color = "White"/>
+
+   <Button class = "ConfirmReplaceCardText"
+           onClick = "selectACardToReplace"
+           color = "#ff8080"
+           alignment = "MiddleRight"
+           fontStyle = "Bold"/>
+
+   <InputField class = "PaymentPanelNumberInput"
+               resizeTextForBestFit = "true"
+               color = "White"
+               fontStyle = "Bold"
+               characterLimit = "7"
+               text = "0"
+               textAlignment = "MiddleCenter"
+               contentType = "DecimalNumber"
+               characterValidation = "Decimal"
+               onEndEdit="getInputAmount"/>
+
+   <InputField class = "WinningPanelNumberDisplay"
+               resizeTextForBestFit = "true"
+               interactable = "false"
+               readOnly = "true"
+               colors = "Black|Black|Black|Black"
+               fontStyle = "Bold"
+               characterLimit = "7"
+               textAlignment = "MiddleCenter"
+               text = "0"
+               contentType = "DecimalNumber"
+               characterValidation = "Decimal"/>
+
+   <Text class = "BalancesPanelText"
+         alignment = "LeftCenter"
+         fontSize = "16"
+         fontStyle = "Bold"
+         color = "White"
+         cellPadding = "0 0 0 0"/>
+   <Text class = "BalancesPanelHeadingText"
+         fontSize = "18"
+         fontstyle = "Bold"
+         color = "Teal"
+         height = "400"/>
+   <InputField class = "BalancesPanelNumberInput"
+               resizeTextForBestFit = "true"
+               color = "Black"
+               fontStyle = "Bold"
+               characterLimit = "7"
+               textAlignment = "RightCenter"
+               contentType = "DecimalNumber"
+               characterValidation = "Decimal"/>
+   <InputField class = "BalancesPanelTextInput"
+               resizeTextForBestFit = "true"
+               color = "Black"
+               fontStyle = "Bold"
+               characterLimit = "8"
+               textAlignment = "LeftCenter"
+               characterValidation = "AlphaNumeric"/>
+
+   <InputField class = "ActivePlayersPanelNumberInput"
+               resizeTextForBestFit = "true"
+               interactable = "false"
+               readOnly = "true"
+               color = "Black"
+               fontStyle = "Bold"
+               characterLimit = "6"
+               textAlignment = "RightCenter"
+               contentType = "DecimalNumber"
+               characterValidation = "None"
+               textColor = "Black"/>
+   <InputField class = "ActivePlayersPanelTextInput"
+               resizeTextForBestFit = "true"
+               interactable = "false"
+               readOnly = "true"
+               color = "Black"
+               fontStyle = "Bold"
+               characterLimit = "8"
+               textAlignment = "LeftCenter"
+               characterValidation = "None"
+               textColor = "Black"/>
+
+   <Button class= "YourBalanceLabel"
+           interactable = "false"
+           Padding  =  "0 -40 00 0"
+           icon = "Sprites/Icons/Arrow_Right"
+           iconAlignment = "Right"
+           iconColor = "Red"
+           resizeTextForBestFit = "true"
+           fontStyle = "Bold"
+           color = "Black"
+           text = "Your Balance"/>
+
+   <Button hoverClass  = "hover"
+           pressClass  = "press"
+           transition  = "None"/>
+
+   <ToggleButton hoverClass  = "hover"
+                 pressClass  = "press"
+                 transition  = "None"/>
+   <!-- When hovered over, make the button grey, and make the text color Magenta -->
+   <Button class = "hover"  textColor = "Magenta" />
+   <!-- When pressed, make the button Yellow -->
+   <Button class = "press"  textColor = "Yellow" />
+   <!-- When selected, make the button Yellow -->
+   <Button class = "select" textColor = "Yellow"/>
+
+   <!-- When hovered over, make the button grey, and make the text color Magenta -->
+   <ToggleButton class = "hover"  textColor = "Magenta" />
+   <!-- When pressed, make the button yellow -->
+   <ToggleButton class = "press"  textColor = "Yellow" />
+   <!-- When selected, make the button yellow -->
+   <ToggleButton class = "select" textColor = "Yellow" />
+</Defaults>
+<!-- Games Panel     Games Panel     Games Panel     Games Panel     Games panel -->
+<!-- Games Panel     Games Panel     Games Panel     Games Panel     Games panel -->
+<!-- Games Panel     Games Panel     Games Panel     Games Panel     Games panel -->
+<!-- Games Panel     Games Panel     Games Panel     Games Panel     Games panel -->
+<Panel id = "GamesPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       width = "250"
+       height = "650"
+       rectAlignment = "UpperRight">
+   <TableLayout id = "GamesTable"
+                class = "PokerTable"
+                width = "250">
+       <Row preferredHeight = "25">
+           <Cell>
+               <Button interactable = "false"
+                       color = "Blue"
+                       fontStyle = "Bold"
+                       image = ""
+                       text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_3-5-7"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "Blue"
+                       text= "3-5-7"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_7CardStud"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "Teal"
+                       text = "7 Card Stud"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_7CardStudSpitReplaceSpit"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "purple"
+                       text = "7 Card Stud Spit Replace Spit"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_7x2"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "yellow"
+                       text = "7 x 2"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_BoxesAndCorners"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "Pink"
+                       text = "Boxes &amp; Corners"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_Bundles"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "Orange"
+                       text = "Bundles"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_BurnTheBiffel"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "#AFFFE3"
+                       text = "Burn the Biffel"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_Cincinnati"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "#B89F5D"
+                       text = "Cincinnati"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_DeathWheel"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "Magenta"
+                       text = "Death Wheel"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_IronCross"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "#4DA8DA"
+                       text = "Iron Cross"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_JacksOrBetter"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "#B5651D"
+                       text = "Jacks or Better Trips to Win"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button  id = "GamePicker_LoMa"
+                        OnClick = "onChangeGame"
+                        class = "GamesPanelText"
+                        color = "#FF1493"
+                        text = "Lo Ma"/>
+              <Button  id = "GamePicker_HiMa"
+                       OnClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "#FF1493"
+                       text = "Hi Ma"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button  id = "GamePicker_Omaha"
+                        onClick = "onChangeGame"
+                        class = "GamesPanelText"
+                        color = "Red"
+                        text = "Omaha"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_RowsAndColumnsWithASpit"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "#800080"
+                       text = "Rows &amp; Columns with a Spit"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GamePicker_Slide"
+                       onClick = "onChangeGame"
+                       class = "GamesPanelText"
+                       color = "Green"
+                       text = "Slide"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "ResetDeck"
+                       onClick = "resetDeck"
+                       color = "Grey"
+                       fontSize = "40"
+                       fontStyle = "BoldAndItalic"
+                       text = "RESET"/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- Betting Panel     Betting Panel     Betting Panel     Betting Panel     Betting panel -->
+<!-- Betting Panel     Betting Panel     Betting Panel     Betting Panel     Betting panel -->
+<!-- Betting Panel     Betting Panel     Betting Panel     Betting Panel     Betting panel -->
+<!-- visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink| "              -->
+<Panel id = "BettingPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       offsetXY = "0 0"
+       rectAlignment = "UpperLeft"
+       width = "250"
+       height = "205">
+   <TableLayout id = "BettingTable"
+                class = "PokerTable">
+       <Row preferredHeight = "25">
+           <Cell columnSpan = "2">
+               <Button interactable = "false"
+                     image = ""
+                     color = "Green"
+                     fontStyle = "Bold"
+                     text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "BetAmountPicker_0.50"
+                       onClick = "betAmountPicker"
+                       color = "Green"
+                       resizeTextForBestFit = "true"
+                       fontstyle = "Bold"
+                       text = "$0.50"/>
+           </Cell>
+           <Cell>
+               <Button id = "BetAmountPicker_1.00"
+                       onClick = "betAmountPicker"
+                       color = "Green"
+                       resizeTextForBestFit = "true"
+                       fontstyle = "Bold"
+                       text = "$1.00"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "BetAmountPicker_1.50"
+                       onClick = "betAmountPicker"
+                       color = "Green"
+                       resizeTextForBestFit = "true"
+                       fontstyle = "Bold"
+                       text = "$1.50"/>
+           </Cell>
+           <Cell>
+               <Button id = "BetAmountPicker_2.00"
+                 onClick = "betAmountPicker"
+                 color = "Green"
+                 resizeTextForBestFit = "true"
+                 fontstyle = "Bold"
+                 text = "$2.00"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "BetAmountPicker_3.00"
+                 onClick = "betAmountPicker"
+                 color = "Green"
+                 resizeTextForBestFit = "true"
+                 fontstyle = "Bold"
+                 text = "$3.00"/>
+           </Cell>
+           <Cell>
+               <Button id = "BetAmountPicker_4.00"
+                 onClick = "betAmountPicker"
+                 color = "Green"
+                 resizeTextForBestFit = "true"
+                 fontstyle = "Bold"
+                 text = "$4.00"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "BuyAmountPicker_0.50"
+                       onClick = "buyAmountPicker"
+                       color = "#FF1493"
+                       resizeTextForBestFit = "true"
+                       fontstyle = "Bold"
+                       text = "Buy SpitCard $0.50"/>
+           </Cell>
+           <Cell>
+                 <Button id = "ShowHand"
+                        onClick = "showHand"
+                        color = "Purple"
+                        resizeTextForBestFit = "true"
+                        fontStyle = "Bold"
+                        text = "Show Hand"/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- Winning Panel     Winning Panel     Winning Panel     Winning Panel     Winning panel -->
+<!-- Winning Panel     Winning Panel     Winning Panel     Winning Panel     Winning panel -->
+<!-- Winning Panel     Winning Panel     Winning Panel     Winning Panel     Winning panel -->
+<!-- visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink| "                                            -->
+<Panel id = "WinningPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       offsetXY = "0 -470"
+       rectAlignment = "UpperLeft"
+       width = "250"
+       height = "160">
+   <TableLayout id = "WinningTable"
+                class = "PokerTable">
+    <Row PreferredHeight = "25">
+        <Cell columnSpan = "2">
+           <Button interactable = "false"
+                   color = "#FFD700"
+                   fontStyle = "Bold"
+                   image = ""
+                   text = "WINNNING"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell>
+             <Button visibility = "White"
+                     id = "YourBalanceLabel"
+                     class = "YourBalanceLabel"
+                     textColor = "White"/>
+             <Button visibility = "Red"
+                     id = "YourBalanceLabel"
+                     class = "YourBalanceLabel"
+                     textColor = "Red"/>
+             <Button visibility = "Orange"
+                     id = "YourBalanceLabel"
+                     class = "YourBalanceLabel"
+                     textColor = "Orange"/>
+             <Button visibility = "Yellow"
+                     id = "YourBalanceLabel"
+                     class = "YourBalanceLabel"
+                     textColor = "Yellow"/>
+             <Button visibility = "Blue"
+                     id = "YourBalanceLabel"
+                     class = "YourBalanceLabel"
+                     textColor = "Blue"/>
+             <Button visibility = "Purple"
+                     id = "YourBalanceLabel"
+                     class = "YourBalanceLabel"
+                     textColor = "Purple"/>
+             <Button visibility = "Pink"
+                     id = "YourBalanceLabel"
+                     class = "YourBalanceLabel"
+                     textColor = "Pink"/>
+         </Cell>
+         <Cell>
+               <InputField visibility = "White"
+                           id = "WinningPanelBalanceWhite"
+                           textColor = "White"
+                           class = "WinningPanelNumberDisplay"/>
+               <InputField visibility = "Red"
+                           id = "WinningPanelBalanceRed"
+                           textColor = "Red"
+                           class = "WinningPanelNumberDisplay"/>
+               <InputField visibility = "Orange"
+                           id = "WinningPanelBalanceOrange"
+                           textColor = "Orange"
+                           class = "WinningPanelNumberDisplay"/>
+               <InputField visibility = "Yellow"
+                           id = "WinningPanelBalanceYellow"
+                           textColor = "Yellow"
+                           class = "WinningPanelNumberDisplay"/>
+               <InputField visibility = "Blue"
+                           id = "WinningPanelBalanceBlue"
+                           textColor = "Blue"
+                           class = "WinningPanelNumberDisplay"/>
+               <InputField visibility = "Purple"
+                           id = "WinningPanelBalancePurple"
+                           textColor = "Purple"
+                           class = "WinningPanelNumberDisplay"/>
+               <InputField visibility = "Pink"
+                           id = "WinningPanelBalancePink"
+                           textColor = "Pink"
+                           class = "WinningPanelNumberDisplay"/>
+        </Cell>
+    </Row>
+       <Row>
+           <Cell>
+               <Button id = "TakeEntirePot"
+                       onClick = "takeEntirePot"
+                       color = "#FFD700"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Take Entire    Pot"/>
+           </Cell>
+           <Cell>
+               <Button id = "TakeHalfOfThePot"
+                       onClick = "takeHalfOfThePot"
+                       color = "#FFD700"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Take ½ of the Pot"/>
+           </Cell>
+
+       </Row>
+       <Row>
+           <Cell>
+             <Button id = "TakeWon"
+                     onClick = "takeAllWon"
+                     color = "#FFD700"
+                     resizeTextForBestFit = "true"
+                     fontStyle = "Bold"
+                     text = "Take Won"/>
+           </Cell>
+           <Cell>
+             <Button id = "GetRoyalties"
+                     onClick = "getRoyalties"
+                     color = "#FFAA000"
+                     resizeTextForBestFit = "true"
+                     fontStyle = "Bold"
+                     text = "Get Your Royalties"/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- Declare Panel     Declare Panel     Declare Panel     Declare Panel     Declare panel -->
+<!-- Declare Panel     Declare Panel     Declare Panel     Declare Panel     Declare panel -->
+<!-- Declare Panel     Declare Panel     Declare Panel     Declare Panel     Declare panel -->
+<Panel id = "DeclarePanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       offsetXY = "0 -210"
+       rectAlignment = "UpperLeft"
+       width = "250"
+       height = "250">
+   <TableLayout id = "DeclareTable"
+                class = "PokerTable">
+      <Row preferredHeight = "25">
+          <Cell columnSpan = "2">
+             <Button interactable = "false"
+                     color = "#FF1493"
+                     fontStyle = "Bold"
+                     image = ""
+                     text = "DECLARE"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell>
+               <Button visibility = "White"
+                       id = "FunctionPicker_Wh_lo"
+                       class = "DeclarePanelText"
+                       onClick = "declareFunction"
+                       color = "Pink"
+                       text = " Lo"/>
+               <Button visibility = "Red"
+                       id = "FunctionPicker_Re_lo"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "Pink"
+                       text = " Lo"/>
+               <Button visibility = "Orange"
+                       id = "FunctionPicker_Or_lo"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "Pink"
+                       text = " Lo"/>
+               <Button visibility = "Yellow"
+                       id = "FunctionPicker_Ye_lo"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "Pink"
+                       text = " Lo"/>
+               <Button visibility = "Blue"
+                       id = "FunctionPicker_Bl_lo"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "Pink"
+                       text = " Lo"/>
+               <Button visibility = "Purple"
+                       id = "FunctionPicker_Pu_lo"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "Pink"
+                       text = " Lo"/>
+               <Button visibility = "Pink"
+                       id = "FunctionPicker_Pi_lo"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "Pink"
+                       text = " Lo"/>
+       </Cell>
+       <Cell>
+               <Button visibility = "White"
+                       id = "FunctionPicker_Wh_in"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#88B04B"
+                       text = "In"/>
+               <Button visibility = "Red"
+                       id = "FunctionPicker_Re_in"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#88B04B"
+                       text = "In"/>
+               <Button visibility = "Orange"
+                       id = "FunctionPicker_Or_in"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#88B04B"
+                       text = "In"/>
+               <Button visibility = "Yellow"
+                       id = "FunctionPicker_Ye_in"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#88B04B"
+                       text = "In"/>
+               <Button visibility = "Blue"
+                       id = "FunctionPicker_Bl_in"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#88B04B"
+                       text = "In"/>
+               <Button visibility = "Purple"
+                       id = "FunctionPicker_Pu_in"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#88B04B"
+                       text = "In"/>
+               <Button visibility = "Pink"
+                       id = "FunctionPicker_Pi_in"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#88B04B"
+                       text = "In"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button visibility = "White"
+                       id = "FunctionPicker_Wh_hi"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "purple"
+                       text = "Hi"/>
+               <Button visibility = "Red"
+                       id = "FunctionPicker_Re_hi"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "purple"
+                       text = "Hi"/>
+               <Button visibility = "Orange"
+                       id = "FunctionPicker_Or_hi"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "purple"
+                       text = "Hi"/>
+               <Button visibility = "Yellow"
+                       id = "FunctionPicker_Ye_hi"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "purple"
+                       text = "Hi"/>
+               <Button visibility = "Blue"
+                       id = "FunctionPicker_Bl_hi"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "purple"
+                       text = "Hi"/>
+               <Button visibility = "Purple"
+                       id = "FunctionPicker_Pu_hi"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "purple"
+                       text = "Hi"/>
+               <Button visibility = "Pink"
+                        id = "FunctionPicker_Pi_hi"
+                        onClick = "declareFunction"
+                        class = "DeclarePanelText"
+                        fontStyle = "Bold"
+                        text = "Hi"/>
+           </Cell>
+           <Cell>
+               <Button visibility = "White"
+                       id = "FunctionPicker_Wh_out"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF6F61"
+                       text = "Out"/>
+               <Button visibility = "Red"
+                       id = "FunctionPicker_Re_out"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF6F61"
+                       text = "Out"/>
+               <Button visibility = "Orange"
+                       id = "FunctionPicker_Or_out"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF6F61"
+                       text = "Out"/>
+               <Button visibility = "Yellow"
+                       id = "FunctionPicker_Ye_out"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF6F61"
+                       text = "Out"/>
+               <Button visibility = "Blue"
+                       id = "FunctionPicker_Bl_out"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF6F61"
+                       text = "Out"/>
+               <Button visibility = "Purple"
+                       id = "FunctionPicker_Pu_out"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF6F61"
+                       text = "Out"/>
+               <Button visibility = "Pink"
+                       id = "FunctionPicker_Pi_out"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF6F61"
+                       text = "Out"/>
+          </Cell>
+      </Row>
+      <Row>
+           <Cell>
+               <Button visibility = "White"
+                       id = "FunctionPicker_Wh_both"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF1493"
+                       text = "Both"/>
+               <Button visibility = "Red"
+                       id = "FunctionPicker_Re_both"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF1493"
+                       text = "Both"/>
+               <Button visibility = "Orange"
+                       id = "FunctionPicker_Or_both"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF1493"
+                       text = "Both"/>
+               <Button visibility = "Yellow"
+                       id = "FunctionPicker_Ye_both"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF1493"
+                       text = "Both"/>
+               <Button visibility = "Blue"
+                       id = "FunctionPicker_Bl_both"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF1493"
+                       text = "Both"/>
+               <Button visibility = "Purple"
+                       id = "FunctionPicker_Pu_both"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF1493"
+                       text = "Both"/>
+               <Button visibility = "Pink"
+                       id = "FunctionPicker_Pi_both"
+                       onClick = "declareFunction"
+                       class = "DeclarePanelText"
+                       color = "#FF1493"
+                       text = "Both"/>
+           </Cell>
+           <Cell>
+             <Button id = "addHalfPoint"
+                     space = "preserved"
+                     onClick = "addHalfPoint"
+                     color = "Blue"
+                     resizeTextForBestFit = "true"
+                     fontStyle = "Bold"
+                     text = "3-5-7        Add ½ Point"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell ColumnSpan = "2">
+             <Button visibility = "White"
+                     id = "ConfirmReplaceCard_White"
+                     class="ConfirmReplaceCardText"
+                     text = "Confirm Replace Card"/>
+             <Button visibility = "Red"
+                     id = "ConfirmReplaceCard_Red"
+                     class="ConfirmReplaceCardText"
+                     text = "Confirm Replace Card"/>
+             <Button visibility = "Orange"
+                     id = "ConfirmReplaceCard_Orange"
+                     class="ConfirmReplaceCardText"
+                     text = "Confirm Replace Card"/>
+             <Button visibility = "Yellow"
+                     id = "ConfirmReplaceCard_Yellow"
+                     class="ConfirmReplaceCardText"
+                     text = "Confirm Replace Card"/>
+             <Button visibility = "Blue"
+                     id = "ConfirmReplaceCard_Blue"
+                     class="ConfirmReplaceCardText"
+                     text = "Confirm Replace Card"/>
+             <Button visibility = "Purple"
+                     id = "ConfirmReplaceCard_Purple"
+                     class="ConfirmReplaceCardText"
+                     text = "Confirm Replace Card"/>
+             <Button visibility = "Pink"
+                     id = "ConfirmReplaceCard_Pink"
+                     class="ConfirmReplaceCardText"
+                     text = "Confirm Replace Card"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell>
+             <Dropdown id = "SelectReplaceCardName"
+                       onValueChanged = "selectACardToReplace"
+                       dropdownBackgroundColor	= "Yellow"
+                       itemBackgroundColors	 = "White"
+                       textColor = "Red"
+                       itemTextColor = "Black"
+                       fontStyle = "Bold"
+                       itemHeight = "24"
+                       resizeTextForBestFit = "true">
+                         <Option >NAME</Option>
+                         <Option >Ace</Option>
+                         <Option >Two</Option>
+                         <Option >Three</Option>
+                         <Option >Four</Option>
+                         <Option >Five</Option>
+                         <Option >Six</Option>
+                         <Option >Seven</Option>
+                         <Option >Eight</Option>
+                         <Option >Nine</Option>
+                         <Option >Ten</Option>
+                         <Option >Jack</Option>
+                         <Option >Queen</Option>
+                         <Option >King</Option>
+                         <Option >None</Option>
+             </Dropdown>
+         </Cell>
+           <Cell>
+               <Dropdown id = "SelectReplaceCardSuit"
+                         onValueChanged = "selectACardToReplace"
+                         dropdownBackgroundColor	= "Yellow"
+                         itemBackgroundColors	 = "White"
+                         textColor = "Red"
+                         fontStyle = "Bold"
+                         itemTextColor = "Black"
+                         itemHeight = "24"
+                         resizeTextForBestFit = "true">
+                   <Option >SUIT</Option>
+                   <Option >Spades</Option>
+                   <Option >Hearts</Option>
+                   <Option >Diamonds</Option>
+                   <Option >Clubs</Option>
+                   <Option >None</Option>
+               </Dropdown>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- adjustment Panel     adjustment Panel     adjustment Panel     adjustment Panel     adjustment panel -->
+<!-- adjustment Panel     adjustment Panel     adjustment Panel     adjustment Panel     adjustment panel -->
+<!-- adjustment Panel     adjustment Panel     adjustment Panel     adjustment Panel     adjustment panel -->
+<Panel id = "AdjustmentPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       offsetXY = "0 -760"
+       rectAlignment = "UpperLeft"
+       width = "250"
+       height = "115">
+   <TableLayout id = "AdjustmentTable"
+                class = "PokerTable">
+       <Row preferredHeight = "25">
+           <Cell columnSpan = "2">
+              <Button interactable = "false"
+                      color = "#d89f9f"
+                      fontStyle = "Bold"
+                      image = ""
+                      text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "TakeFiftyCentsFromBet"
+                       onClick = "takeFiftyCentsFromBet"
+                       color = "#d89f9f"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Take $0.50 From Bet"/>
+          </Cell>
+          <Cell>
+               <Button id = "TakeOneDollarFromBet"
+                       onClick = "takeOneDollarFromBet"
+                       color = "#d89f9f"
+                       resizeTextForBestFit = "true"
+                       FontStyle = "Bold"
+                       text = "Take $1.00 From Bet"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "TakeFiftyCentsFromBuy"
+                       onClick = "takeFiftyCentsFromBuy"
+                       color = "#c26969"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Take $0.50 From Buy"/>
+          </Cell>
+          <Cell>
+               <Button id = "TakeOneDollarFromBuy"
+                       onClick = "takeOneDollarFromBuy"
+                       color = "#c26969"
+                       FontStyle = "Bold"
+                       resizeTextForBestFit = "true"
+                       text = "Take $1.00 From Buy"/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- Payment Panel     Payment Panel     Payment Panel     Payment Panel     Payment panel -->
+<!-- Payment Panel     Payment Panel     Payment Panel     Payment Panel     Payment panel -->
+<!-- Payment Panel     Payment Panel     Payment Panel     Payment Panel     Payment panel -->
+<Panel id = "PaymentPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       offsetXY = "0 -640"
+       rectAlignment = "UpperLeft"
+       width = "250"
+       height = "115">
+   <TableLayout id = "PaymentTable"
+                class = "PokerTable">
+       <Row preferredHeight = "25">
+           <Cell columnSpan = "2">
+              <Button interactable = "false"
+                      color = "Red"
+                      fontStyle = "Bold"
+                      image = ""
+                      text = "PAYMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Button id = "EnterAmountLabel"
+                       interactable = "false"
+                       Padding  =  "0 -40 0 0"
+                       icon = "Sprites/Icons/Arrow_Right"
+                       iconAlignment = "Right"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       color = "Black"
+                       iconColor = "Red"
+                       text = "Enter Amount"/>
+           </Cell>
+           <Cell>
+                 <InputField visibility = "White"
+                           id = "InputAmount_White"
+                           class = "PaymentPanelNumberInput"/>
+                 <InputField visibility = "Red"
+                           id = "InputAmount_Red"
+                           class = "PaymentPanelNumberInput"/>
+                <InputField visibility = "Orange"
+                          id = "InputAmount_Orange"
+                          class = "PaymentPanelNumberInput"/>
+                <InputField visibility = "Yellow"
+                          id = "InputAmount_Yellow"
+                          class = "PaymentPanelNumberInput"/>
+                <InputField visibility = "Blue"
+                          id = "InputAmount_Blue"
+                          class = "PaymentPanelNumberInput"/>
+                <InputField visibility = "Purple"
+                          id = "InputAmount_Purple"
+                          class = "PaymentPanelNumberInput"/>
+                <InputField visibility = "Pink"
+                          id = "InputAmount_Pink"
+                          class = "PaymentPanelNumberInput"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "GiveTo"
+                       onClick = "giveTo"
+                       color = "#ff8080"
+                       alignment = "MiddleRight"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       tooltip = "Enter Amount ($100 max each time) and Select Player before Pressing Button"
+                       text = "Give To:"/>
+           </Cell>
+           <Cell>
+               <Dropdown id = "GiveToSelection"
+                         onValueChanged = "giveToSelection"
+                         dropdownBackgroundColor	= "Yellow"
+                         itemBackgroundColors	 = "White"
+                         textColor = "Red"
+                         itemTextColor = "Black"
+                         fontStyle = "Bold"
+                         itemHeight = "24"
+                         resizeTextForBestFit = "true">
+                   <Option >Select Player</Option>
+                   <Option >Paul</Option>
+                   <Option >MarkF</Option>
+                   <Option >Susan</Option>
+                   <Option >Mitchell</Option>
+                   <Option >MarkH</Option>
+                   <Option >Herb</Option>
+                   <Option >Marvin</Option>
+                   <Option ></Option>
+               </Dropdown>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- Hand Panel  Hand Panel  Hand Panel  Hand Panel  Hand Panel  Hand Panel  -->
+<!-- Hand Panel  Hand Panel  Hand Panel  Hand Panel  Hand Panel  Hand Panel  -->
+<!-- Hand Panel  Hand Panel  Hand Panel  Hand Panel  Hand Panel  Hand Panel  -->
+<Panel id = "HandPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       offsetXY = "0 -885"
+       rectAlignment = "UpperLeft"
+       width = "250"
+       height = "70">
+   <TableLayout id = "HandTable"
+                class = "PokerTable">
+       <Row preferredHeight = "25">
+           <Cell columnSpan = "2">
+              <Button interactable = "false"
+                      color = "#FAC6A8"
+                      fontStyle = "Bold"
+                      image = ""
+                      text = "HAND"/>
+           </Cell>
+       </Row>
+       <!-- WIP
+
+       <Row>
+           <Cell>
+             <Dropdown id = "PlayerName"
+                       interactable = "false"
+                       onValueChanged = "assignPlayerName"
+                       dropdownBackgroundColor	= "Yellow"
+                       itemBackgroundColors	 = "White"
+                       textColor = "Red"
+                       itemTextColor = "Black"
+                       fontStyle = "Bold"
+                       itemHeight = "24"
+                       resizeTextForBestFit = "true">
+                 <Option >Who Are You?</Option>
+                 <Option >Paul</Option>
+                 <Option >MarkF</Option>
+                 <Option >Jay</Option>
+                 <Option >Mitchell</Option>
+                 <Option >MarkH</Option>
+                 <Option >Herb</Option>
+                 <Option >Marvin</Option>
+             </Dropdown>
+           </Cell>
+           <Cell>
+             <Button id = "TBD"
+                     interactable = "false"
+                     color = "Grey"/>
+           </Cell>
+         </Row> -->
+         <Row>
+             <Cell>
+                 <Button id = "Sort Hand Ace to King with No Pairs"
+                        onClick = "sortMyHand"
+                        color = "#bfff00"
+                        resizeTextForBestFit = "true"
+                        fontStyle = "Bold"
+                        text = "Sort Hand           Ace - King           with No Pairs"/>
+             </Cell>
+             <Cell>
+                 <Button id = "Sort Hand Ace to King with Pairs"
+                         onClick = "sortMyHand"
+                         color = "#ffbf00"
+                         resizeTextForBestFit = "true"
+                         fontStyle = "Bold"
+                         text = "Sort Hand            Ace - King            with Pairs"/>
+              </Cell>
+           </Row>
+   </TableLayout>
+</Panel>
+<!-- Message Panel     Message Panel     Message Panel     Message Panel     Message panel -->
+<!-- Message Panel     Message Panel     Message Panel     Message Panel     Message panel -->
+<!-- Message Panel     Message Panel     Message Panel     Message Panel     Message panel -->
+<Panel id = "MessagePanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       width = "850"
+       height = "50"
+       outlineSize = "0 0"
+       outline = "Black"
+       rectAlignment = "UpperCenter">
+  <TableLayout id = "MessageTable"
+                columnWidths  =  "125 500 225"
+                class = "PokerTable">
+       <Row>
+         <Cell>
+             <InputField id = "Clock"
+                         interactable = "false"
+                         resizeTextForBestFit = "false"
+                         readOnly = "true"
+                         fontStyle = "Bold"
+                         fontSize = "18"
+                         textAlignment = "MiddleCenter"
+                         colors = "White|White|White|White"
+                         textColor = "Black"
+                         text=" "/>
+         </Cell>
+           <Cell>
+               <InputField id = "Message"
+                           interactable = "false"
+                           resizeTextForBestFit = "true"
+                           horizontalOverflow = "Wrap"
+                           readOnly = "true"
+                           fontStyle = "Bold"
+                           textAlignment = "MiddleCenter"
+                           colors = "Yellow|Yellow|Yellow|Yellow"
+                           textColor = "Black"
+                           text=""/>
+           </Cell>
+           <Cell>
+               <InputField id = "Pot"
+                           interactable = "false"
+                           resizeTextForBestFit = "true"
+                           resizeTextMaxSize = "29"
+                           readOnly = "true"
+                           fontStyle = "Bold"
+                           textAlignment = "MiddleCenter"
+                           colors = "Black|Black|Black|Black"
+                           textColor = "White"
+                           text="POT = "/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven panel -->
+<!-- ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven panel -->
+<!-- ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven Panel     ThreeFiveSeven panel -->
+<Panel id = "ThreeFiveSevenPointsPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       color = "black"
+       width="215"
+       height="230">
+   <TableLayout id = "ThreeFiveSevenPointsTable"
+                readOnly = "true"
+                columnWidths  =  "120 95"
+                rectAlignment ="MiddleCenter"
+                autoCalculateHeight = "false">
+      <Row preferredHeight = "25">
+          <Cell dontUseTableCellBackground = "true"
+                color = "Black">
+              <Button id="ThreeFiveSevenPointsPanelHeading"
+                      interactable = "false"
+                      color = "Black"
+                      fontStyle = "Bold"
+                      text = "Player"/>
+          </Cell>
+          <Cell dontUseTableCellBackground = "true"
+                color = "Black">
+              <Button id="ThreeFiveSevenPlayerPanelHeading"
+                      interactable = "false"
+                      color = "Black"
+                      fontStyle = "Bold"
+                      text = "Points"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell>
+               <InputField id = "ThreeFiveSevenPointsName"
+                           interactable = "false"
+                           textColor ="White"
+                           linetype = "MultiLineNewLine"
+                           fontSize = "24"
+                           fontStyle = "Bold"
+                           colors = "clear|clear|clear|clear"
+                           readOnly = "true"
+                           text = " "
+                           textAlignment = "UpperLeft"/>
+           </Cell>
+           <Cell>
+               <InputField id = "ThreeFiveSevenPointsValue"
+                           interactable = "false"
+                           textColor ="White"
+                           linetype = "MultiLineNewLine"
+                           fontSize = "24"
+                           fontStyle = "Bold"
+                           colors = "clear|clear|clear|clear"
+                           readOnly = "true"
+                           text = " "
+                           textAlignment = "UpperLeft"/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+
+<!-- Active Players Panel     Active Players Panel     Active Players Panel     Active Players Panel      -->
+<!-- Active Players Panel     Active Players Panel     Active Players Panel     Active Players Panel      -->
+<!-- Active Players Panel     Active Players Panel     Active Players Panel     Active Players Panel      -->
+<Panel id = "ActivePlayersPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       width = "210"
+       Height = "255"
+       offsetXY = "-200 0"
+       rectAlignment = "MiddleCenter"
+       outline = "Grey"
+       outlineSize = "2 2">
+   <TableLayout id = "ActivePlayersPanelTable"
+                class = "PokerTable"
+                cellPadding = "0 0 -1 -1"
+                columnWidths  =  "85 65 60">
+       <Row preferredHeight = "25">
+           <Cell columnSpan = "3"
+                 dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Button id="ActivePlayersPanelHeading"
+                       color="Grey"
+                       interactable = "false"
+                       text = "0 ACTIVE PLAYERS"/>
+<!--                       <Text>
+                           <b>
+                           <textsize size="23">
+                           <textcolor color="White"  >A</textcolor>
+                           <textcolor color="Red"    >C</textcolor>
+                           <textcolor color="Orange" >T</textcolor>
+                           <textcolor color="Yellow" >I</textcolor>
+                           <textcolor color="Blue"   >V</textcolor>
+                           <textcolor color="Purple" >E</textcolor>
+                           <textcolor color="Black"  >\u0020\u0020</textcolor>
+                           <textcolor color="White"  >P</textcolor>
+                           <textcolor color="Red"    >L</textcolor>
+                           <textcolor color="Orange" >A</textcolor>
+                           <textcolor color="Yellow" >Y</textcolor>
+                           <textcolor color="Blue"   >E</textcolor>
+                           <textcolor color="Purple" >R</textcolor>
+                           <textcolor color="#FFC0CB">S</textcolor>
+                           </textsize>
+                           </b>
+                       </Text>
+               </Button> -->
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelPlayerNameWhite"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelBetWhite"
+                           class = "ActivePlayersPanelNumberInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelDeclareWhite"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelPlayerNameRed"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelBetRed"
+                           class = "ActivePlayersPanelNumberInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelDeclareRed"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelPlayerNameOrange"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelBetOrange"
+                           class = "ActivePlayersPanelNumberInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelDeclareOrange"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelPlayerNameYellow"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelBetYellow"
+                           class = "ActivePlayersPanelNumberInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelDeclareYellow"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+              <InputField id = "ActivePlayersPanelPlayerNameBlue"
+                          class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelBetBlue"
+                           class = "ActivePlayersPanelNumberInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelDeclareBlue"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelPlayerNamePurple"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelBetPurple"
+                           class = "ActivePlayersPanelNumberInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelDeclarePurple"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelPlayerNamePink"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelBetPink"
+                           class = "ActivePlayersPanelNumberInput"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "ActivePlayersPanelDeclarePink"
+                           class = "ActivePlayersPanelTextInput"/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- Admin Panel     Admin Panel     Admin Panel     Admin Panel     Admin panel -->
+<!-- Admin Panel     Admin Panel     Admin Panel     Admin Panel     Admin panel -->
+<!-- Admin Panel     Admin Panel     Admin Panel     Admin Panel     Admin panel -->
+<Panel id = "AdminPanel"
+       visibility = "Admin"
+       class = "WindowBorder"
+       offsetXY = "0 -450"
+       width = "250"
+       height = "175">
+   <TableLayout id = "AdminTable"
+                class = "PokerTable">
+       <Row preferredHeight = "25">
+           <Cell columnSpan = "2" >
+              <Button interactable = "false"
+                      color = "Orange"
+                      fontStyle = "Bold"
+                      image = ""
+                      text = "ADMIN"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "DealFirstAce"
+                       onClick = "dealFirstAce"
+                       color = "#66FF66"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Deal First Ace"/>
+           </Cell>
+           <Cell>
+               <Button id = "FoldAllPlayers"
+                       onClick = "foldAllPlayers"
+                       color = "Red"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Fold All Players"/>
+            </Cell>
+         </Row>
+       <Row>
+           <Cell>
+             <ToggleButton id = "JeopardyMusic"
+                           isOn = "true"
+                           onValueChanged = "jeopardyMusic"
+                           fontStyle = "Bold"
+                           color = "Orange"
+                           text = "✓ Jeopardy Music"/>
+           </Cell>
+           <Cell>
+             <ToggleButton id = "RunBiffelSimulation"
+                           isOn = "false"
+                           onValueChanged = "runBiffelSimulation"
+                           color = "#AFFFE3"
+                           resizeTextForBestFit = "true"
+                           fontStyle = "Bold"
+                           text = "Run Biffel Simulation"/>
+            </Cell>
+         </Row>
+       <Row>
+           <Cell>
+             <Button id = "EndofGamePayments"
+                     onClick = "endOfGamePayments"
+                     fontStyle = "Bold"
+                     color = "Yellow"
+                     text = "Calculate End of Game Payments"/>
+           </Cell>
+           <Cell>
+               <ToggleButton id = "ToggleEndOfGameDisplay"
+                             isOn = "true"
+                             onValueChanged = "toggleEndOfGameDisplay"
+                             color = "Yellow"
+                             resizeTextForBestFit = "true"
+                             fontStyle = "Bold"
+                             text = "Toggle End Of Game Display On/Off"/>
+           </Cell>
+         </Row>
+       <Row>
+         <Cell>
+             <Button id = "ShowAllHands"
+                     onClick = "showAllHands"
+                     color = "Purple"
+                     resizeTextForBestFit = "true"
+                     fontStyle = "Bold"
+                     text = "Show All Hands"/>
+          </Cell>
+           <Cell>
+               <ToggleButton id = "TestingMode"
+                             isOn = "false"
+                             onValueChanged = "testingMode"
+                             color = "Grey"
+                             resizeTextForBestFit = "true"
+                             fontStyle = "Bold"
+                             text = "Testing Mode"/>
+           </Cell>
+         </Row>
+   </TableLayout>
+</Panel>
+<!-- Balances Panel     Balances Panel     Balances Panel     Balances Panel     Balances panel -->
+<!-- Balances Panel     Balances Panel     Balances Panel     Balances Panel     Balances panel -->
+<!-- Balances Panel     Balances Panel     Balances Panel     Balances Panel     Balances panel -->
+<Panel id = "BalancesPanel"
+       visibility = "Admin"
+       class = "WindowBorder"
+       rectAlignment = "LowerRight"
+       width = "355"
+       height = "350"
+       outlineSize = "0 0"
+       outline = "Black">
+   <TableLayout id = "BalancesTable"
+                class = "PokerTable"
+                cellPadding = "0 0 -1 -1"
+                columnWidths  =  "85 85 65 55 65">
+       <Row preferredHeight = "25">
+           <Cell columnSpan = "5"
+                 dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Button interactable = "false"
+                       color = "Black"
+                       fontStyle = "Bold"
+                       image = ""
+                       text = "BALANCES"/>
+           </Cell>
+       </Row>
+       <Row preferredHeight = "25">
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Text id = "BalancesPanelPlayerHeadingLabel"
+                     class = "BalancesPanelHeadingText"
+                     text = "Player"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Text id = "BalancesPanelBalanceHeadingLabel"
+                     class = "BalancesPanelHeadingText"
+                     text = "Bal."/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Text id = "BalancesPanelBetHeadingLabel"
+                     class = "BalancesPanelHeadingText"
+                     text = "Bet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Text id = "BalancesPanelBuyHeadingLabel"
+                     class = "BalancesPanelHeadingText"
+                     text = "Buy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Text id = "BalancesPanelWonHeadingLabel"
+                     class = "BalancesPanelHeadingText"
+                     text = "Won"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelPlayerNameWhite"
+                           class = "BalancesPanelTextInput"
+                           textColor = "White"
+                           onEndEdit = "updatePlayerName"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBalanceWhite"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "White"
+                           onEndEdit = "updateBalance"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBetWhite"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "White"
+                           onEndEdit = "updateBet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBuyWhite"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "White"
+                           onEndEdit = "updateBuy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelWonWhite"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "White"
+                           onEndEdit = "updateWon"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelPlayerNameRed"
+                           class = "BalancesPanelTextInput"
+                           textColor = "Red"
+                           onEndEdit = "updatePlayerName"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBalanceRed"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Red"
+                           onEndEdit = "updateBalance"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBetRed"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Red"
+                           onEndEdit = "updateBet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBuyRed"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Red"
+                           onEndEdit = "updateBuy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelWonRed"
+                             class = "BalancesPanelNumberInput"
+                             text = "0"
+                             textColor = "Red"
+                             onEndEdit = "updateWon"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelPlayerNameOrange"
+                           class = "BalancesPanelTextInput"
+                           textColor = "Orange"
+                           onEndEdit = "updatePlayerName"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBalanceOrange"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Orange"
+                           onEndEdit = "updateBalance"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBetOrange"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Orange"
+                           onEndEdit = "updateBet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBuyOrange"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Orange"
+                           onEndEdit = "updateBuy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelWonOrange"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Orange"
+                           onEndEdit = "updateWon"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelPlayerNameYellow"
+                           class = "BalancesPanelTextInput"
+                           textColor = "Yellow"
+                           onEndEdit = "updatePlayerName"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBalanceYellow"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Yellow"
+                           onEndEdit = "updateBalance"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBetYellow"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Yellow"
+                           onEndEdit = "updateBet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBuyYellow"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Yellow"
+                           onEndEdit = "updateBuy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelWonYellow"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Yellow"
+                           onEndEdit = "updateWon"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+              <InputField id = "BalancesPanelPlayerNameBlue"
+                          class = "BalancesPanelTextInput"
+                          textColor = "Blue"
+                          onEndEdit = "updatePlayerName"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBalanceBlue"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Blue"
+                           onEndEdit = "updateBalance"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBetBlue"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Blue"
+                           onEndEdit = "updateBet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBuyBlue"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Blue"
+                           onEndEdit = "updateBuy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelWonBlue"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Blue"
+                           onEndEdit = "updateWon"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelPlayerNamePurple"
+                           class = "BalancesPanelTextInput"
+                           textColor = "Purple"
+                           onEndEdit = "updatePlayerName"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBalancePurple"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Purple"
+                           onEndEdit = "updateBalance"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBetPurple"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Purple"
+                           onEndEdit = "updateBet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBuyPurple"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Purple"
+                           onEndEdit = "updateBuy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelWonPurple"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Purple"
+                           onEndEdit = "updateWon"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelPlayerNamePink"
+                           class = "BalancesPanelTextInput"
+                           textColor = "Pink"
+                           onEndEdit = "updatePlayerName"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBalancePink"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Pink"
+                           onEndEdit = "updateBalance"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBetPink"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Pink"
+                           onEndEdit = "updateBet"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelBuyPink"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Pink"
+                           onEndEdit = "updateBuy"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <InputField id = "BalancesPanelWonPink"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Pink"
+                           onEndEdit = "updateWon"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Text id = "BalancesPanelPotLabel"
+                     color = "Green"
+                     class = "BalancesPanelText"
+                     text = "POT"/>
+           </Cell>
+           <Cell dontUseTableCellBackground = "true"
+                 columnSpan = "4"
+                 color = "Black">
+               <InputField id = "BalancesPanelPot"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Green"
+                           onEndEdit = "updatePotAmount"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell dontUseTableCellBackground = "true"
+                 color = "Black">
+               <Text id = "BalancesPanelVarianceLabel"
+                     color = "Grey"
+                     class = "BalancesPanelText"
+                     text = "Variance"/>
+           </Cell>
+           <Cell  dontUseTableCellBackground = "true"
+                  columnSpan = "4"
+                  color = "Black">
+               <InputField id = "BalancesPanelVariance"
+                           readOnly = "true"
+                           class = "BalancesPanelNumberInput"
+                           text = "0"
+                           textColor = "Grey"/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<!-- Fold Panel     Admin Panel     Fold Panel     Fold Panel     Fold panel -->
+<!-- Fold Panel     Fold Panel     Fold Panel     Fold Panel      Fold panel -->
+<!-- Fold Panel     Fold Panel     Fold Panel     Fold Panel     Fold panel -->
+<Panel id = "FoldPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       offsetXY = "150 0"
+       rectAlignment = "MiddleCenter"
+       outline = "Red"
+       width = "100"
+       height = "100">
+   <TableLayout id = "FoldTable"
+                outline = "Red"
+                cellBackgroundColor = "Red"
+                rowBackgroundColor = "Red"
+                class = "PokerTable">
+       <Row>
+       <Cell>
+           <Button id = "Fold"
+                   onClick = "foldHand"
+                   color = "Red"
+                   resizeTextForBestFit = "true"
+                   fontStyle = "Bold"
+                   text = "FOLD HAND"/>
+        </Cell>
+      </Row>
+   </TableLayout>
+</Panel>
+<!-- Panel Display Panel     Panel Display Panel     Panel Display Panel     -->
+<!-- Panel Display Panel     Panel Display Panel     Panel Display Panel     -->
+<!-- Panel Display Panel     Panel Display Panel     Panel Display Panel     -->
+
+<!-- White White White White White White White White White White White White -->
+<Panel id = "DisplayPanelsPanel_White"
+       visibility = "White"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       rectAlignment = "MiddleCenter"
+       width = "150"
+       height = "400">
+   <TableLayout id = "DisplayPanelsTable_White"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                autoCalculateHeight = "false"
+                columnWidths  =  "25 100 25">
+       <Row preferredHeight = "25">
+           <Cell>
+               <Button class = "DisplayPanelText+"/>
+           </Cell>
+           <Cell>
+               <Button class = "DisplayPanelTextName"/>
+           </Cell>
+           <Cell>
+               <Button class = "DisplayPanelText-"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_ActivePlayers_White"
+                             visibility = "White"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             text = " ACTIVE PLAYERS"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Adjustment_White"
+                             visibility = "White"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#d89f9f"
+                             text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Betting_White"
+                             visibility = "White"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Green"
+                             text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Declare_White"
+                             visibility = "White"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FF1493"
+                             text = "DECLARE"/>
+         </Cell>
+     </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Games_White"
+                             visibility = "White"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Blue"
+                             text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Hand_White"
+                             visibility = "White"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FAC6A8"
+                             text = "HAND"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Payment_White"
+                             visibility = "White"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Red"
+                             text = "PAYMENT"/>
+           </Cell>
+       </Row>
+   <Row>
+     <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Winning_White"
+                             visibility = "White"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FFD700"
+                             text = "WINNING"/>
+     </Cell>
+ </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_None_White"
+                             visibility = "White"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#AFFFE3"
+                             text = "NONE"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Admin"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "Orange"
+                             text = "ADMIN"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Balances"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "purple"
+                             text = "BALANCES"/>
+       </Cell>
+   </Row>
+   </TableLayout>
+</Panel>
+<!-- Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red   -->
+<Panel id = "DisplayPanelsPanel_Red"
+       visibility = "Red"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       rectAlignment = "MiddleCenter"
+       width = "150"
+       height = "400">
+   <TableLayout id = "DisplayPanelsTable_Red"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                autoCalculateHeight = "false"
+                columnWidths  =  "25 100 25">
+      <Row preferredHeight = "25">
+          <Cell>
+              <Button class = "DisplayPanelText+"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelTextName"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelText-"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_ActivePlayers_Red"
+                             visibility = "Red"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             text = " ACTIVE PLAYERS"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Adjustment_Red"
+                             visibility = "Red"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#d89f9f"
+                             text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Betting_Red"
+                             visibility = "Red"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Green"
+                             text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Declare_Red"
+                             visibility = "Red"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FF1493"
+                             text = "DECLARE"/>
+         </Cell>
+     </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Games_Red"
+                             visibility = "Red"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Blue"
+                             text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Hand_Red"
+                             visibility = "Red"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FAC6A8"
+                             text = "HAND"/>
+           </Cell>
+       </Row>
+     <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Payment_Red"
+                             visibility = "Red"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Red"
+                             text = "PAYMENT"/>
+       </Cell>
+   </Row>
+   <Row>
+     <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Winning_Red"
+                             visibility = "Red"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FFD700"
+                             text = "WINNING"/>
+     </Cell>
+ </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_None_Red"
+                             visibility = "Red"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#AFFFE3"
+                             text = "NONE"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Admin"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "Orange"
+                             text = "ADMIN"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Balances"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "purple"
+                             text = "BALANCES"/>
+       </Cell>
+   </Row>
+   </TableLayout>
+</Panel>
+<!-- Orange Orange Orange Orange Orange Orange Orange Orange Orange Orange   -->
+<Panel id = "DisplayPanelsPanel_Orange"
+       visibility = "Orange"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       rectAlignment = "MiddleCenter"
+       width = "150"
+       height = "400">
+   <TableLayout id = "DisplayPanelsTable_Orange"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                autoCalculateHeight = "false"
+                columnWidths  =  "25 100 25">
+      <Row preferredHeight = "25">
+          <Cell>
+              <Button class = "DisplayPanelText+"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelTextName"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelText-"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_ActivePlayers_Orange"
+                             visibility = "Orange"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             text = " ACTIVE PLAYERS"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Adjustment_Orange"
+                             visibility = "Orange"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#d89f9f"
+                             text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Betting_Orange"
+                             visibility = "Orange"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Green"
+                             text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Declare_Orange"
+                             visibility = "Orange"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FF1493"
+                             text = "DECLARE"/>
+         </Cell>
+     </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Games_Orange"
+                             visibility = "Orange"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Blue"
+                             text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Hand_Orange"
+                             visibility = "Orange"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FAC6A8"
+                             text = "HAND"/>
+           </Cell>
+       </Row>
+     <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Payment_Orange"
+                             visibility = "Orange"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Red"
+                             text = "PAYMENT"/>
+       </Cell>
+   </Row>
+   <Row>
+     <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Winning_Orange"
+                             visibility = "Orange"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FFD700"
+                             text = "WINNING"/>
+     </Cell>
+ </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_None_Orange"
+                             visibility = "Orange"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#AFFFE3"
+                             text = "NONE"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Admin"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "Orange"
+                             text = "ADMIN"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Balances"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "purple"
+                             text = "BALANCES"/>
+       </Cell>
+   </Row>
+   </TableLayout>
+</Panel>
+<!-- Yellow Yellow Yellow Yellow Yellow Yellow Yellow Yellow Yellow Yellow   -->
+<Panel id = "DisplayPanelsPanel_Yellow"
+       visibility = "Yellow"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       rectAlignment = "MiddleCenter"
+       width = "150"
+       height = "400">
+   <TableLayout id = "DisplayPanelsTable_Yellow"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                autoCalculateHeight = "false"
+                columnWidths  =  "25 100 25">
+      <Row preferredHeight = "25">
+          <Cell>
+              <Button class = "DisplayPanelText+"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelTextName"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelText-"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_ActivePlayers_Yellow"
+                             visibility = "Yellow"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             text = " ACTIVE PLAYERS"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Adjustment_Yellow"
+                             visibility = "Yellow"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#d89f9f"
+                             text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Betting_Yellow"
+                             visibility = "Yellow"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Green"
+                             text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Declare_Yellow"
+                             visibility = "Yellow"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FF1493"
+                             text = "DECLARE"/>
+         </Cell>
+     </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Games_Yellow"
+                             visibility = "Yellow"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Blue"
+                             text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Hand_Yellow"
+                             visibility = "Yellow"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FAC6A8"
+                             text = "HAND"/>
+           </Cell>
+       </Row>
+     <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Payment_Yellow"
+                             visibility = "Yellow"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Red"
+                             text = "PAYMENT"/>
+       </Cell>
+   </Row>
+   <Row>
+     <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Winning_Yellow"
+                             visibility = "Yellow"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FFD700"
+                             text = "WINNING"/>
+     </Cell>
+ </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_None_Yellow"
+                             visibility = "Yellow"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#AFFFE3"
+                             text = "NONE"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Admin"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "Yellow"
+                             text = "ADMIN"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Balances"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "purple"
+                             text = "BALANCES"/>
+       </Cell>
+   </Row>
+   </TableLayout>
+</Panel>
+<!-- Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue   -->
+<Panel id = "DisplayPanelsPanel_Blue"
+       visibility = "Blue"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       rectAlignment = "MiddleCenter"
+       width = "150"
+       height = "400">
+   <TableLayout id = "DisplayPanelsTable_Blue"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                autoCalculateHeight = "false"
+                columnWidths  =  "25 100 25">
+      <Row preferredHeight = "25">
+          <Cell>
+              <Button class = "DisplayPanelText+"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelTextName"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelText-"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_ActivePlayers_Blue"
+                             visibility = "Blue"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             text = " ACTIVE PLAYERS"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Adjustment_Blue"
+                             visibility = "Blue"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#d89f9f"
+                             text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Betting_Blue"
+                             visibility = "Blue"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Green"
+                             text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Declare_Blue"
+                             visibility = "Blue"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FF1493"
+                             text = "DECLARE"/>
+         </Cell>
+     </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Games_Blue"
+                             visibility = "Blue"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Blue"
+                             text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Hand_Blue"
+                             visibility = "Blue"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FAC6A8"
+                             text = "HAND"/>
+           </Cell>
+       </Row>
+     <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Payment_Blue"
+                             visibility = "Blue"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Red"
+                             text = "PAYMENT"/>
+       </Cell>
+   </Row>
+   <Row>
+     <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Winning_Blue"
+                             visibility = "Blue"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FFD700"
+                             text = "WINNING"/>
+     </Cell>
+ </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_None_Blue"
+                             visibility = "Blue"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#AFFFE3"
+                             text = "NONE"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Admin"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "Yellow"
+                             text = "ADMIN"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Balances"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "purple"
+                             text = "BALANCES"/>
+       </Cell>
+   </Row>
+   </TableLayout>
+</Panel>
+<!-- Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple   -->
+<Panel id = "DisplayPanelsPanel_Purple"
+       visibility = "Purple"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       rectAlignment = "MiddleCenter"
+       width = "150"
+       height = "400">
+   <TableLayout id = "DisplayPanelsTable_Purple"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                autoCalculateHeight = "false"
+                columnWidths  =  "25 100 25">
+      <Row preferredHeight = "25">
+          <Cell>
+              <Button class = "DisplayPanelText+"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelTextName"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelText-"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_ActivePlayers_Purple"
+                             visibility = "Purple"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             text = " ACTIVE PLAYERS"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Adjustment_Purple"
+                             visibility = "Purple"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#d89f9f"
+                             text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Betting_Purple"
+                             visibility = "Purple"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Green"
+                             text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Declare_Purple"
+                             visibility = "Purple"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FF1493"
+                             text = "DECLARE"/>
+         </Cell>
+     </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Games_Purple"
+                             visibility = "Purple"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Blue"
+                             text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Hand_Purple"
+                             visibility = "Purple"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FAC6A8"
+                             text = "HAND"/>
+           </Cell>
+       </Row>
+     <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Payment_Purple"
+                             visibility = "Purple"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Red"
+                             text = "PAYMENT"/>
+       </Cell>
+   </Row>
+   <Row>
+     <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Winning_Purple"
+                             visibility = "Purple"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FFD700"
+                             text = "WINNING"/>
+     </Cell>
+ </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_None_Purple"
+                             visibility = "Purple"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#AFFFE3"
+                             text = "NONE"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Admin"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "Yellow"
+                             text = "ADMIN"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Balances"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "purple"
+                             text = "BALANCES"/>
+       </Cell>
+   </Row>
+   </TableLayout>
+</Panel>
+<!-- Pink Pink Pink Pink Pink Pink Pink Pink Pink Pink Pink Pink Pink Pink   -->
+<Panel id = "DisplayPanelsPanel_Pink"
+       visibility = "Pink"
+       allowDragging = "true"
+       returnToOriginalPositionWhenReleased = "false"
+       rectAlignment = "MiddleCenter"
+       width = "150"
+       height = "400">
+   <TableLayout id = "DisplayPanelsTable_Pink"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                autoCalculateHeight = "false"
+                columnWidths  =  "25 100 25">
+      <Row preferredHeight = "25">
+          <Cell>
+              <Button class = "DisplayPanelText+"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelTextName"/>
+          </Cell>
+          <Cell>
+              <Button class = "DisplayPanelText-"/>
+          </Cell>
+      </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_ActivePlayers_Pink"
+                             visibility = "Pink"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             text = " ACTIVE PLAYERS"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Adjustment_Pink"
+                             visibility = "Pink"
+                             class = "DisplayPanelText"
+                             isOn = "true"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#d89f9f"
+                             text = "ADJUSTMENT"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Betting_Pink"
+                             visibility = "Pink"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Green"
+                             text = "BETTING"/>
+           </Cell>
+       </Row>
+       <Row>
+         <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Declare_Pink"
+                             visibility = "Pink"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FF1493"
+                             text = "DECLARE"/>
+         </Cell>
+     </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Games_Pink"
+                             visibility = "Pink"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Blue"
+                             text = "GAMES"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Hand_Pink"
+                             visibility = "Pink"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FAC6A8"
+                             text = "HAND"/>
+           </Cell>
+       </Row>
+     <Row>
+           <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Payment_Pink"
+                             visibility = "Pink"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "Red"
+                             text = "PAYMENT"/>
+       </Cell>
+   </Row>
+   <Row>
+     <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_Winning_Pink"
+                             visibility = "Pink"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#FFD700"
+                             text = "WINNING"/>
+     </Cell>
+ </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayPanelPicker_None_Pink"
+                             visibility = "Pink"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayPanelPicker"
+                             color = "#AFFFE3"
+                             text = "NONE"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Admin"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "Yellow"
+                             text = "ADMIN"/>
+       </Cell>
+   </Row>
+   <Row>
+       <Cell columnSpan = "3">
+               <ToggleButton id = "DisplayAdminPanelPicker_Balances"
+                             visibility = "Admin"
+                             isOn = "true"
+                             class = "DisplayPanelText"
+                             onValueChanged = "displayAdminPanelPicker"
+                             color = "purple"
+                             text = "BALANCES"/>
+       </Cell>
+   </Row>
+   </TableLayout>
+</Panel>
+<!-- Colors Panel    Colors Panel    Colors Panel   Colors Panel     Colors Panel -->
+<!-- Colors Panel    Colors Panel    Colors Panel   Colors Panel     Colors Panel -->
+<!-- Colors Panel    Colors Panel    Colors Panel   Colors Panel     Colors Panel -->
+<Panel id = "ColorsPanel"
+       visibility = " "
+       class = "WindowBorder"
+       offsetXY = "350 -25"
+       width = "100"
+       height = "300">
+   <TableLayout id = "ColorsTable"
+                class = "PokerTable">
+       <Row preferredHeight = "25">
+           <Cell >
+              <Button interactable = "false"
+                      color = "Black"
+                      fontStyle = "Bold"
+                      image = ""
+                      text = "Colors"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "colorPicker_White"
+                       onClick = "changePlayerColor"
+                       color = "White"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "White"/>
+           </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "colorPicker_Red"
+                       onClick = "changePlayerColor"
+                       color = "Red"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Red"/>
+
+            </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "colorPicker_Orange"
+                       onClick = "changePlayerColor"
+                       color = "Orange"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Orange"/>
+
+            </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "colorPicker_Yellow"
+                       onClick = "changePlayerColor"
+                       color = "Yellow"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Yellow"/>
+            </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "colorPicker_Blue"
+                       onClick = "changePlayerColor"
+                       color = "Blue"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Blue"/>
+
+            </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "colorPicker_Purple"
+                       onClick = "changePlayerColor"
+                       color = "Purple"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Purple"/>
+
+            </Cell>
+       </Row>
+       <Row>
+           <Cell>
+               <Button id = "colorPicker_Pink"
+                       onClick = "changePlayerColor"
+                       color = "Pink"
+                       resizeTextForBestFit = "true"
+                       fontStyle = "Bold"
+                       text = "Pink"/>
+
+            </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
+<Panel id="TimerDisplayPanel"
+       visibility = " ">
+   <TableLayout id="TimerDisplayLayout"
+                cellPadding = "-2"
+                outline = "clear"
+                cellBackgroundColor = "clear"
+                rowBackgroundColor = "clear"
+                width="400"
+                height="400"
+                rectAlignment="MiddleCenter"
+                columnWidths="100 100 0 100 100">
+       <Row>
+           <Cell columnSpan="5">
+             <InputField id = "TimerDisplay"
+                         textAlignment = "MiddleCenter"
+                         interactable = "false"
+                         readOnly = "true"
+                         color = "Clear"
+                         textColor = "#FFFFFF80"
+                         fontStyle = "Bold"
+                         fontSize="150" />
+           </Cell>
+       </Row>
+    </TableLayout>
+</Panel>
+<!-- EndOfGamePayments Panel     EndOfGamePayments Panel    EndOfGamePayments Panel -->
+<!-- EndOfGamePayments Panel     EndOfGamePayments Panel    EndOfGamePayments Panel -->
+<!-- EndOfGamePayments Panel     EndOfGamePayments Panel    EndOfGamePayments Panel -->
+<Panel id = "EndOfGamePaymentsPanel"
+       visibility = "White|Red|Orange|Yellow|Blue|Purple|Pink"
+       class = "WindowBorder"
+       width = "1100"
+       height = "700"
+       rectAlignment = "MiddleCenter">
+   <TableLayout id = "EndOfGamePaymentsTable"
+                class = "PokerTable"
+                readOnly = "true"
+                rectAlignment ="MiddleCenter">
+       <Row>
+           <Cell>
+               <InputField id = "EndOfGamePaymentsDisplay"
+                           resizeTextForBestFit = "true"
+                           interactable = "false"
+                           textColor ="Black"
+                           linetype = "MultiLineNewLine"
+                           fontStyle = "Bold"
+                           colors = "Green|Green|Green|Green"
+                           readOnly = "true"
+                           text = " "/>
+           </Cell>
+       </Row>
+   </TableLayout>
+</Panel>
